@@ -1,8 +1,16 @@
-import requests
+from repository.dnd_repo import get_dnd_races
 
-def get_dnd_races():
-    url = "https://www.dnd5eapi.co/api/2014/races"
-    headers = {'Accept': 'application/json'}
-    response = requests.get(url, headers=headers, timeout=10)
-    response.raise_for_status()
-    return response.json()
+class DndRace:
+
+    async def fetch_and_save(self):
+        data = get_dnd_races()
+        races = data.get("results", [])
+
+        races_body = []
+        for race in races:
+            races_body.append({
+                "index" : race.get("index"),
+                "name"  : race.get("name")
+            })
+
+        return races_body

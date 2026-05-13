@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from config.dnd_json import DndRace
+from services.dnd_services import DndRace
 
 router = APIRouter()
 

@@ -1,0 +1,33 @@
+# Ambientes virtuais
+env/
+.venv/
+venv/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-*
+
+# Sistema
+.DS_Store
+Thumbs.db
+.env
+.env.local
+
+# FastAPI/Uvicorn
+*.db
+*.sqlite
+*.sqlite3

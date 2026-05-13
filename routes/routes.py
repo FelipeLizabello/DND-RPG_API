@@ -9,7 +9,9 @@ async def get_races():
     races = await dnd_races.fetch_and_save()
     return races
 
-@router.get("dnd/races/{race_id}")
-async def set_races(race_id : str):
-    return {"race_id": race_id}
+@router.get("/dnd/races/{race_id}")
+async def get_races_id(race_id : str):
+    dnd_races = DndRace()
+    race = await dnd_races.fetch_race_by_id(race_id)
+    return race
     
